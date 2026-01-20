@@ -3,7 +3,8 @@ use PHPUnit\Framework\TestCase;
 use HolaMundoMultilenguaje\Saludo;
 class SaludoTest extends TestCase
 {
-    public function testGenerarSaludoAleatorio()
+//Commit
+public function testGenerarSaludoAleatorio()
     {
         $saludo = new Saludo();
         $resultado = $saludo->generarSaludoAleatorio();
