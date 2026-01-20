@@ -1,13 +1,23 @@
 <?php
-
 use PHPUnit\Framework\TestCase;
-use App\Calculadora;
-
-class CalculadoraTest extends TestCase
+use HolaMundoMultilenguaje\Saludo;
+class SaludoTest extends TestCase
 {
-    public function testSuma()
+    public function testGenerarSaludoAleatorio()
     {
-        $calc = new Calculadora();
-        $this->assertEquals(23, $calc->suma(3, 2));
+        $saludo = new Saludo();
+        $resultado = $saludo->generarSaludoAleatorio();
+
+        // Verifica que el resultado es un string
+        $this->assertIsString($resultado['saludo']);
+
+        // Verifica que el resultado contiene un saludo válido
+        $this->assertNotEmpty($resultado['saludo']);
+
+        // Verifica que el código también es un string
+        $this->assertIsString($resultado['codigo']);
+
+        // Verifica que el código no esté vacío
+        $this->assertNotEmpty($resultado['codigo']);
     }
 }
